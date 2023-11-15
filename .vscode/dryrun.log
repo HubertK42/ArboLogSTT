@@ -1,0 +1,57 @@
+make PROJECT=armemu-test --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/home/jan/Data/C++/Krypto/Krypto'
+echo 'create dirs:' 
+mkdir ../obj/Base/ ../obj/Base/Bob/ ../obj/Base/LogFile/ ../obj/Base/MySQL/ ../obj/Base/Socket/ ../obj/Base/Thread/ ../obj/HTMLSocket/ ../obj/Trader/ ../obj/Trader/AIModules/ ../obj/Trader/Controller/ ../obj/Trader/MarketInterface/ ../obj/Trader/WebUI/ -p	
+echo '.' 		
+g++ -ggdb -pthread -D_DEBUG -c -o ../obj/HTMLSocket/HTMLSocket.o src/HTMLSocket/HTMLSocket.cpp 
+g++ -ggdb -pthread -D_DEBUG -c -o ../obj/Base/ConfigFile.o src/Base/ConfigFile.cpp 
+g++ -ggdb -pthread -D_DEBUG -c -o ../obj/Base/Bob.o src/Base/Bob.cpp 
+g++ -ggdb -pthread -D_DEBUG -c -o ../obj/Base/ErrorID.o src/Base/ErrorID.cpp 
+g++ -ggdb -pthread -D_DEBUG -c -o ../obj/Base/String.o src/Base/String.cpp 
+g++ -ggdb -pthread -D_DEBUG -c -o ../obj/Trader/main_service.o src/Trader/main_service.cpp 
+g++ -ggdb -pthread -D_DEBUG -c -o ../obj/Trader/MarketManager.o src/Trader/MarketManager.cpp 
+g++ -ggdb -pthread -D_DEBUG -c -o ../obj/Trader/MarketDataContainer.o src/Trader/MarketDataContainer.cpp 
+g++ -ggdb -pthread -D_DEBUG -c -o ../obj/Trader/UIPanel.o src/Trader/UIPanel.cpp 
+g++ -ggdb -pthread -D_DEBUG -c -o ../obj/Trader/OrderbookDatabase.o src/Trader/OrderbookDatabase.cpp 
+g++ -ggdb -pthread -D_DEBUG -c -o ../obj/Trader/TradeAccountSimulation.o src/Trader/TradeAccountSimulation.cpp 
+g++ -ggdb -pthread -D_DEBUG -c -o ../obj/Trader/AIModule.o src/Trader/AIModule.cpp 
+g++ -ggdb -pthread -D_DEBUG -c -o ../obj/Trader/TradeAccount.o src/Trader/TradeAccount.cpp 
+g++ -ggdb -pthread -D_DEBUG -c -o ../obj/Trader/PriceDatabase.o src/Trader/PriceDatabase.cpp 
+g++ -ggdb -pthread -D_DEBUG -c -o ../obj/Trader/main.o src/Trader/main.cpp 
+g++ -ggdb -pthread -D_DEBUG -c -o ../obj/Trader/AssetsToTrade.o src/Trader/AssetsToTrade.cpp 
+g++ -ggdb -pthread -D_DEBUG -c -o ../obj/Trader/MarketManagerSimulation.o src/Trader/MarketManagerSimulation.cpp 
+g++ -ggdb -pthread -D_DEBUG -c -o ../obj/Trader/TradeTransactionInfos.o src/Trader/TradeTransactionInfos.cpp 
+g++ -ggdb -pthread -D_DEBUG -c -o ../obj/Base/MySQL/Table.o src/Base/MySQL/Table.cpp 
+g++ -ggdb -pthread -D_DEBUG -c -o ../obj/Base/MySQL/Connection.o src/Base/MySQL/Connection.cpp 
+g++ -ggdb -pthread -D_DEBUG -c -o ../obj/Base/MySQL/Result.o src/Base/MySQL/Result.cpp 
+g++ -ggdb -pthread -D_DEBUG -c -o ../obj/Base/LogFile/LogStream.o src/Base/LogFile/LogStream.cpp 
+g++ -ggdb -pthread -D_DEBUG -c -o ../obj/Base/LogFile/LogFile.o src/Base/LogFile/LogFile.cpp 
+g++ -ggdb -pthread -D_DEBUG -c -o ../obj/Base/LogFile/LogFileEntry.o src/Base/LogFile/LogFileEntry.cpp 
+g++ -ggdb -pthread -D_DEBUG -c -o ../obj/Base/LogFile/LogFileSupport.o src/Base/LogFile/LogFileSupport.cpp 
+g++ -ggdb -pthread -D_DEBUG -c -o ../obj/Base/Bob/BobDatabaseFile.o src/Base/Bob/BobDatabaseFile.cpp 
+g++ -ggdb -pthread -D_DEBUG -c -o ../obj/Base/Bob/BobList.o src/Base/Bob/BobList.cpp 
+g++ -ggdb -pthread -D_DEBUG -c -o ../obj/Base/Bob/BobTemplate.o src/Base/Bob/BobTemplate.cpp 
+g++ -ggdb -pthread -D_DEBUG -c -o ../obj/Base/Bob/BobObject.o src/Base/Bob/BobObject.cpp 
+g++ -ggdb -pthread -D_DEBUG -c -o ../obj/Base/Bob/BobData.o src/Base/Bob/BobData.cpp 
+g++ -ggdb -pthread -D_DEBUG -c -o ../obj/Base/Socket/HTTPClient.o src/Base/Socket/HTTPClient.cpp 
+g++ -ggdb -pthread -D_DEBUG -c -o ../obj/Base/Socket/BaseClient.o src/Base/Socket/BaseClient.cpp 
+g++ -ggdb -pthread -D_DEBUG -c -o ../obj/Base/Socket/HTTPServer.o src/Base/Socket/HTTPServer.cpp 
+g++ -ggdb -pthread -D_DEBUG -c -o ../obj/Base/Socket/BaseServer.o src/Base/Socket/BaseServer.cpp 
+g++ -ggdb -pthread -D_DEBUG -c -o ../obj/Base/Thread/JobSystem.o src/Base/Thread/JobSystem.cpp 
+g++ -ggdb -pthread -D_DEBUG -c -o ../obj/Base/Thread/Clock.o src/Base/Thread/Clock.cpp 
+g++ -ggdb -pthread -D_DEBUG -c -o ../obj/Base/Thread/Mutex.o src/Base/Thread/Mutex.cpp 
+g++ -ggdb -pthread -D_DEBUG -c -o ../obj/Base/Thread/Loop.o src/Base/Thread/Loop.cpp 
+g++ -ggdb -pthread -D_DEBUG -c -o ../obj/Base/Thread/Event.o src/Base/Thread/Event.cpp 
+g++ -ggdb -pthread -D_DEBUG -c -o ../obj/Trader/WebUI/Server.o src/Trader/WebUI/Server.cpp 
+g++ -ggdb -pthread -D_DEBUG -c -o ../obj/Trader/WebUI/Page.o src/Trader/WebUI/Page.cpp 
+g++ -ggdb -pthread -D_DEBUG -c -o ../obj/Trader/WebUI/Client.o src/Trader/WebUI/Client.cpp 
+g++ -ggdb -pthread -D_DEBUG -c -o ../obj/Trader/WebUI/StdModule.o src/Trader/WebUI/StdModule.cpp 
+g++ -ggdb -pthread -D_DEBUG -c -o ../obj/Trader/Controller/ServiceFunctions.o src/Trader/Controller/ServiceFunctions.cpp 
+g++ -ggdb -pthread -D_DEBUG -c -o ../obj/Trader/MarketInterface/KrakenSocket.o src/Trader/MarketInterface/KrakenSocket.cpp 
+g++ -ggdb -pthread -D_DEBUG -c -o ../obj/Trader/MarketInterface/MarketInterface.o src/Trader/MarketInterface/MarketInterface.cpp 
+g++ -ggdb -pthread -D_DEBUG -c -o ../obj/Trader/MarketInterface/KrakenHelper.o src/Trader/MarketInterface/KrakenHelper.cpp 
+g++ -ggdb -pthread -D_DEBUG -c -o ../obj/Trader/AIModules/SimpleSafe.o src/Trader/AIModules/SimpleSafe.cpp 
+g++ -ggdb -pthread -D_DEBUG -c -o ../obj/Trader/AIModules/SimpleMAExtremum.o src/Trader/AIModules/SimpleMAExtremum.cpp 
+g++ -pthread -lncursesw -ggdb -lssl -lcrypto -lstdc++fs -o ../main.run ../obj/HTMLSocket/HTMLSocket.o ../obj/Base/ConfigFile.o ../obj/Base/Bob.o ../obj/Base/ErrorID.o ../obj/Base/String.o ../obj/Trader/main_service.o ../obj/Trader/MarketManager.o ../obj/Trader/MarketDataContainer.o ../obj/Trader/UIPanel.o ../obj/Trader/OrderbookDatabase.o ../obj/Trader/TradeAccountSimulation.o ../obj/Trader/AIModule.o ../obj/Trader/TradeAccount.o ../obj/Trader/PriceDatabase.o ../obj/Trader/main.o ../obj/Trader/AssetsToTrade.o ../obj/Trader/MarketManagerSimulation.o ../obj/Trader/TradeTransactionInfos.o ../obj/Base/MySQL/Table.o ../obj/Base/MySQL/Connection.o ../obj/Base/MySQL/Result.o ../obj/Base/LogFile/LogStream.o ../obj/Base/LogFile/LogFile.o ../obj/Base/LogFile/LogFileEntry.o ../obj/Base/LogFile/LogFileSupport.o ../obj/Base/Bob/BobDatabaseFile.o ../obj/Base/Bob/BobList.o ../obj/Base/Bob/BobTemplate.o ../obj/Base/Bob/BobObject.o ../obj/Base/Bob/BobData.o ../obj/Base/Socket/HTTPClient.o ../obj/Base/Socket/BaseClient.o ../obj/Base/Socket/HTTPServer.o ../obj/Base/Socket/BaseServer.o ../obj/Base/Thread/JobSystem.o ../obj/Base/Thread/Clock.o ../obj/Base/Thread/Mutex.o ../obj/Base/Thread/Loop.o ../obj/Base/Thread/Event.o ../obj/Trader/WebUI/Server.o ../obj/Trader/WebUI/Page.o ../obj/Trader/WebUI/Client.o ../obj/Trader/WebUI/StdModule.o ../obj/Trader/Controller/ServiceFunctions.o ../obj/Trader/MarketInterface/KrakenSocket.o ../obj/Trader/MarketInterface/MarketInterface.o ../obj/Trader/MarketInterface/KrakenHelper.o ../obj/Trader/AIModules/SimpleSafe.o ../obj/Trader/AIModules/SimpleMAExtremum.o  -lcurl -lncursesw -lssl -lcrypto -lmysqlcppconn -lstdc++fs
+make: Leaving directory '/home/jan/Data/C++/Krypto/Krypto'
+ 

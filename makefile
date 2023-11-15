@@ -3,7 +3,7 @@ OBJ_DIR := obj
 DLL_DIR := dll
 OUT_DIR := bin
 OUT_STATIC_DIR := bin/static
-BASELIB_STATIC_DIR := ../BaseLib/bin
+#BASELIB_STATIC_DIR := ../BaseLib/bin
 
 current_path := $(shell pwd)
 
@@ -20,31 +20,32 @@ DIRS := $(sort $(dir $(DIR_STRUCTUR)))
 
 
 LDFLAGS := -ggdb -pthread 
-CPPFLAGS := -ggdb -pthread  -O0
+CPPFLAGS := -ggdb -pthread -O0
 
 CXXFLAGS := _DEBUG 
 
-LIBRARIES := -lstdc++fs -lbase -lpng -lz #link libraries
-LIB_FOLDER_STATIC := ../BaseLib/bin/static
+LIBRARIES := -lstdc++fs -ldl -lpthread -lm -laudiohelper #link libraries
+LIB_FOLDER_STATIC := ../audio/bin/static
 LIB_INCLUDE := 
 
 .PHONY: touch src/main.cpp clean
 
 
-all: create_dirs main.run 
+all_debug: create_dirs createAudiolib_debug main.run 
 
 new: create_dirs clean main.run 
 
 Debug_Main: clean create_dirs debugBuild_Insert main.run 
 Debug_Main_noClean: create_dirs debugBuild_Insert main.run 
-
-All_Libs:	clean createBaseLib create_dirs static_Main 
-static_Main: clean createBaseLib create_dirs releaseBuild static_main.run 
-test_static: clean create_dirs releaseBuild static_main.run 
+Realse_Static: clean createAudiolib_release_static create_dirs releaseBuild static_main.run 
 
 # create static BaseLib library			
-createBaseLib:
-	$(MAKE) -C ../BaseLib static
+createAudiolib_release_static:
+	$(MAKE) -C ../audiohelper release_static
+
+createAudiolib_debug:
+	$(MAKE) -C ../audiohelper debug_shared
+
 
 ## set compiler flags for release #CPPFLAGS := $(CPPFLAGS) -O2 
 releaseBuild:
