@@ -1,5 +1,6 @@
 
-#include "../../audiohelper/src/audiohelper.h"
+//#include "../../audiohelper/src/audiohelper.h"
+#include "ttsrec.h"
 #include <cassert>
 #include <iostream>
 #include <locale.h>
@@ -28,6 +29,15 @@ int main(int argc, char *argv[])
 	sprintf(filepath, "%s", "./test2.wav");
 //---------------------------------------------------------		
 //-------------------- scan start params
+
+    audio::ttsrec test;
+    
+    char file[20]= "./pow.wav";
+
+    test.testrec(file);
+    test.testrec(file);
+
+/*
 	
 	audiohelper AH;
 	//AH.init_recIntoFile(filepath, ma_encoding_format_flac, ma_device_type_capture, 16000, 1, ma_format_s16);
@@ -40,6 +50,6 @@ int main(int argc, char *argv[])
 	std::cout << "start stopped!" << std::endl;
 
 	//AH.start_play(void *pBbuffer);		//!< play sound from pBuffer
-
+*/
 	return 0;
 }
