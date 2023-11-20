@@ -1,5 +1,5 @@
 #define MINIAUDIO_IMPLEMENTATION
-//#include "ttsrec.h"
+#include "ttsrec.h"
 //#include "../../audiohelper/src/audiohelper.h"
 #include "../../audiohelper/src/miniAudio.h"
 
@@ -19,7 +19,7 @@ namespace audio
 	}
 
 	//int test(int argc, char** argv)
-	int audio::testrec(char* file)
+	int ttsrec::testrec(char* file)
 	{
 		ma_result 			result;
 		ma_encoder_config 	encoderConfig;
@@ -68,4 +68,4 @@ namespace audio
 
 		return 0;
 	}
-};
+}

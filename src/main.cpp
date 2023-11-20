@@ -11,15 +11,9 @@
 //#############################################################################
 //! MAIN
 ///
-///	1) scan command line parameters
-///	2) create source image either from file or via image constructor
-///	3) create eye scene parameters, either from command line parameter or via createEyeparams()
-///	4) construct scene
-///	5) create tracer
-/// 6) 	a) run once and terminate
-///		b) do other stuff like optimizations
-///
+
 int main(int argc, char *argv[])
+
 {
 	//--- Set Locale
 	setlocale(LC_ALL, "");
@@ -30,13 +24,12 @@ int main(int argc, char *argv[])
 //---------------------------------------------------------		
 //-------------------- scan start params
 
-    audio::ttsrec test;
+    audio::ttsrec testA;
     
     char file[20]= "./pow.wav";
 
-    test.testrec(file);
-    test.testrec(file);
-
+    testA.testrec(file);
+   
 /*
 	
 	audiohelper AH;

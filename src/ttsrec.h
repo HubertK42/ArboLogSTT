@@ -10,6 +10,6 @@ namespace audio
             
             ttsrec(){;}
             //int test(int argc, char** argv);
-            int test(char* file);
+            int testrec(char* file);
     };
-};
+}
