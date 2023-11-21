@@ -82,10 +82,10 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
 
 # remove all previously generated files	
 clean:
-	$(info ---- clean)
-ifneq ($(REM_FILES),)
-	$(info ---- remove files $(REM_FILES))
+ifneq ($(strip $(REM_FILES)),)
+	@echo 'remove files:'
 	-rm $(REM_FILES)
+	@echo '.'
 else
 	@echo 'Nothing to clean!'
 endif

@@ -28,7 +28,9 @@ int main(int argc, char *argv[])
     
     char file[20]= "./pow.wav";
 
-    testA.testrec(file);
+    //testA.testrec(file);
+
+	testA.playFromFile(file);
    
 /*
 	

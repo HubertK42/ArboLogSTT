@@ -11,5 +11,7 @@ namespace audio
             ttsrec(){;}
             //int test(int argc, char** argv);
             int testrec(char* file);
+
+			int playFromFile(const char* file); //!< play sound from file
     };
 }

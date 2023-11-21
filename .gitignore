@@ -39,3 +39,6 @@ obj/
 
 # images
 *.png
+
+#wav files
+*.wav

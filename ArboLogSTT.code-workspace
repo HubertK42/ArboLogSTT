@@ -5,6 +5,12 @@
 		},
 		{
 			"path": "../audiohelper"
+		},
+		{
+			"path": "../helpdocs"
+		},
+		{
+			"path": "../HTMLSocket"
 		}
 	],
 	"settings": {
