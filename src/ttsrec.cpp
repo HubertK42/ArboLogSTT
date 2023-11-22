@@ -8,8 +8,8 @@
 #include <iostream>
 
 #define SAMPLE_RATE		44100  			//!<  sample rate used for recording and playback
-#define BIT_DEPTH		ma_format_f32 	//!< bits per samples
-//#define BIT_DEPTH		ma_format_s16 	//!< bits per samples
+//#define BIT_DEPTH		ma_format_f32 	//!< bits per samples
+#define BIT_DEPTH		ma_format_s16 	//!< bits per samples
 #define MIC_CHANNELS	1				//!< only use mono for recording
 #define OUT_CHANNELS	1				//!< use stereo for playback
 
@@ -104,12 +104,12 @@ namespace audio
 			return -1;
 		}
 		deviceConfig 					= ma_device_config_init(ma_device_type_playback);
-    	deviceConfig.playback.format   = decoder.outputFormat;
-    	deviceConfig.playback.channels = decoder.outputChannels;
-    	deviceConfig.sampleRate        = decoder.outputSampleRate;
-    	//deviceConfig.sampleRate       = SAMPLE_RATE;
-		deviceConfig.dataCallback      = data_callback;
-    	deviceConfig.pUserData         = &decoder;
+    	deviceConfig.playback.format	= decoder.outputFormat;
+    	deviceConfig.playback.channels	= decoder.outputChannels;
+    	deviceConfig.sampleRate			= decoder.outputSampleRate;
+    	//deviceConfig.sampleRate		= SAMPLE_RATE;
+		deviceConfig.dataCallback		= data_callback;
+    	deviceConfig.pUserData			= &decoder;
 		
 		result = ma_device_init(NULL, &deviceConfig, &device);
 		if (result != MA_SUCCESS) 

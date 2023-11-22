@@ -24,26 +24,30 @@ CPPFLAGS := -ggdb -pthread -O0
 
 CXXFLAGS := _DEBUG 
 
-LIBRARIES := -lstdc++fs -ldl -lpthread -lm -laudiohelper #link libraries
+LIBRARIES := -lstdc++fs -ldl -lpthread -lm -lbase -laudiohelper -lHTMLSocket #link libraries
 LIB_FOLDER_STATIC := ../audio/bin/static
 LIB_INCLUDE := 
 
 .PHONY: touch src/main.cpp clean
 
 
-all_debug: create_dirs createAudiolib_debug main.run 
+all_debug: create_dirs createAllLibs_debug main.run 
 
 new: create_dirs clean main.run 
 
 Debug_Main: clean create_dirs debugBuild_Insert main.run 
 Debug_Main_noClean: create_dirs debugBuild_Insert main.run 
-Realse_Static: clean createAudiolib_release_static create_dirs releaseBuild static_main.run 
+Realse_Static: clean createAllLibs_release_static create_dirs releaseBuild static_main.run 
 
-# create static BaseLib library			
-createAudiolib_release_static:
+# create static BaseLib, audiohelper, HTMLSocket library			
+createAllLibs_release_static:
+	$(MAKE) -C ../BaseLib static
+	$(MAKE) -C ../HTMLSocket release_static
 	$(MAKE) -C ../audiohelper release_static
 
-createAudiolib_debug:
+createAllLibs_debug:
+	$(MAKE) -C ../BaseLib all
+	$(MAKE) -C ../HTMLSocket debug_shared
 	$(MAKE) -C ../audiohelper debug_shared
 
 
@@ -70,7 +74,7 @@ static_main.run: $(OBJ_FILES)
 main.run: $(OBJ_FILES)
 	$(info ---- link with $(LDFLAGS))
 	g++ $(LDFLAGS) -o $(OUT_DIR)/$@ $^ $(LIBRARIES)
-
+#	g++ $(LDFLAGS) -v -o $(OUT_DIR)/$@ $^ $(LIBRARIES)
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
 	g++ $(CPPFLAGS) -D$(CXXFLAGS) -c -o $@ $< $(LIBRARIES)
@@ -141,3 +145,4 @@ endif
 # -o [outfilename]	
 # -O2 optimization flag for a faster code you may also try -O3 or -Ofast
 # -D adds a define into the code like #define A_DEFINE_VALUE for usage with  #ifdef A_DEFINE_VALUE
+# - v verbose for tracking issues with linken and other stuff

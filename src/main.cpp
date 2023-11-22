@@ -1,6 +1,8 @@
 
 //#include "../../audiohelper/src/audiohelper.h"
 #include "ttsrec.h"
+#include "GoogleSocketSTT.h"
+
 #include <cassert>
 #include <iostream>
 #include <locale.h>
@@ -28,9 +30,14 @@ int main(int argc, char *argv[])
     
     char file[20]= "./pow.wav";
 
-    //testA.testrec(file);
+	//testA.testrec(file);
 
 	testA.playFromFile(file);
+
+	GoogleSocketTTS stt("MEYAPIKEY");
+
+	stt.requestTTSfromfile("NoFile");
+
    
 /*
 	

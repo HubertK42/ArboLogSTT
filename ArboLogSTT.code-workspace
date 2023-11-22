@@ -11,6 +11,9 @@
 		},
 		{
 			"path": "../HTMLSocket"
+		},
+		{
+			"path": "../BaseLib"
 		}
 	],
 	"settings": {
