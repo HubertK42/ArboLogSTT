@@ -9,6 +9,10 @@ cd ~/projects/audiohelper
 pwd
 git pull
 
+cd ~/projects/HTMLSocket
+pwd
+git pull
+
 cd ~/projects/ArboLogSTT
 git pull
 

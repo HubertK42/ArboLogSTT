@@ -17,7 +17,7 @@ class GoogleSocketTTS : public HTML::HTMLSocket
 
 	int requestTTSfromfile (const char* file); //!< sends the audio file to google STT and waits for the answer
 
-	int testG() ; // gbt test sample code
+	int testG(const char* file) ; // gbt test sample code
 
 	protected:
 

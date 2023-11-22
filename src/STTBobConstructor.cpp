@@ -54,11 +54,11 @@ Base::Bob createRecogConfig(Base::String topic, int samplerate)
 {
 	Base::Bob BSTT;
 
-	BSTT[_LANGUAGECODE]							= "de-DE";			//: string,
-	// BSTT[_ENCODING] =		"wav" not needed for wav
-	BSTT[_SAMPLERATEHERTZ]						= samplerate;		//: integer,
+	BSTT[_LANGUAGECODE]							= "de-DE";					//: string,
+	BSTT[_ENCODING] 							= "ENCODING_UNSPECIFIED";	// not needed for wav
+	BSTT[_SAMPLERATEHERTZ]						= samplerate;				//: integer,
 	
-	
+	BSTT[_METADATA]								= createRecognitionMetadata(topic); 					// {   object (RecognitionMetadata) },
 /*
 
 	//BSTT[_AUDIOCHANNELCOUNT]					= channels;			//: integer,		// only needed for multi channel recognition
@@ -79,7 +79,7 @@ Base::Bob createRecogConfig(Base::String topic, int samplerate)
 //	BSTT[_ENABLESPOKENEMOJIS]					"enableSpokenEmojis"		//: boolean,
 //@@TODO include this for speech recog improvements BSTT[_DIAARIZATIONCONFIG]						"diarizationConfig"			//: { object (SpeakerDiarizationConfig)  },
 
-	BSTT[_METADATA]								= createRecognitionMetadata(topic); 					// {   object (RecognitionMetadata) },
+
 	BSTT[_MODEL] 								= "latest_long";	// for long speech passages					//: string,
 	BSTT[_USEENHANCED]							= true;				//: boolean
 */

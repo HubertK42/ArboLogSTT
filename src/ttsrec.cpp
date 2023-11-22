@@ -7,7 +7,8 @@
 #include <stdio.h>
 #include <iostream>
 
-#define SAMPLE_RATE		44100  			//!<  sample rate used for recording and playback
+//#define SAMPLE_RATE		44100  			//!<  sample rate used for recording and playback
+#define SAMPLE_RATE		16000  			//!<  sample rate used for recording and playback
 //#define BIT_DEPTH		ma_format_f32 	//!< bits per samples
 #define BIT_DEPTH		ma_format_s16 	//!< bits per samples
 #define MIC_CHANNELS	1				//!< only use mono for recording
@@ -126,9 +127,6 @@ namespace audio
 			std::cerr << "Failed to start playback device. Err-Code:" << result << std::endl;
 			return -3;
 		}
-
-		printf("Press Enter to quit\n");
-		getchar();
 		
 		ma_device_uninit(&device);
 		ma_decoder_uninit(&decoder);

@@ -32,7 +32,8 @@ int main(int argc, char *argv[])
 
     audio::ttsrec testA;
     
-    char file[20]= "./pow.wav";
+    char file[50] = "/home/hubert/projects/baum16000.wav";
+	// char file[50]= "/home/hubert/projects/baum1600base64.dat";
 
 	//testA.testrec(file);
 
@@ -41,8 +42,8 @@ int main(int argc, char *argv[])
 	GoogleSocketTTS stt("MEYAPIKEY");
 
 //	stt.requestTTSfromfile("NoFile");
-	stt.testG();
-   
+	//stt.testG(file);
+	stt.requestTTSfromfile(file);
 /*
 	
 	audiohelper AH;

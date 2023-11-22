@@ -42,3 +42,9 @@ obj/
 
 #wav files
 *.wav
+
+#test files
+Testbase64.dat
+
+#logfile
+2023*
