@@ -53,11 +53,17 @@ Base::Bob createRequest(Base::String topic, int samplerate,Base::String uri, con
 Base::Bob createRecogConfig(Base::String topic, int samplerate)
 {
 	Base::Bob BSTT;
+
+	BSTT[_LANGUAGECODE]							= "de-DE";			//: string,
 	// BSTT[_ENCODING] =		"wav" not needed for wav
 	BSTT[_SAMPLERATEHERTZ]						= samplerate;		//: integer,
+	
+	
+/*
+
 	//BSTT[_AUDIOCHANNELCOUNT]					= channels;			//: integer,		// only needed for multi channel recognition
 	BSTT[_ENABLESEPERATERECOGNITIONPERCHANNEL]	= false;			//: boolean,		// only set to true for multi channel recognition
-	BSTT[_LANGUAGECODE]							= "de-DE";			//: string,
+	
 	//BSTT[_ALTERNATIVELANGUAGECODES]			= 					//: [string ],		A list of up to 3 additional languages
 	BSTT[_MAXALTERNATIVES]						= 1;				//: integer,		number of max alternative transcriptions
 	BSTT[_PROFANITYFILTER]						= false;			//: boolean,		replace dirty words with ****
@@ -76,7 +82,7 @@ Base::Bob createRecogConfig(Base::String topic, int samplerate)
 	BSTT[_METADATA]								= createRecognitionMetadata(topic); 					// {   object (RecognitionMetadata) },
 	BSTT[_MODEL] 								= "latest_long";	// for long speech passages					//: string,
 	BSTT[_USEENHANCED]							= true;				//: boolean
-
+*/
 	return BSTT;
 }
 

@@ -23,6 +23,10 @@ int main(int argc, char *argv[])
 	char filepath[245];
 	//sprintf(filepath, "%s", "./test.flac");
 	sprintf(filepath, "%s", "./test2.wav");
+
+	//-- disable logfile output
+	Base::LogFile::disableConsoleOutput(true);
+	Base::LogFile::disableFile(true);
 //---------------------------------------------------------		
 //-------------------- scan start params
 
@@ -32,12 +36,12 @@ int main(int argc, char *argv[])
 
 	//testA.testrec(file);
 
-	testA.playFromFile(file);
+	//testA.playFromFile(file);
 
 	GoogleSocketTTS stt("MEYAPIKEY");
 
-	stt.requestTTSfromfile("NoFile");
-
+//	stt.requestTTSfromfile("NoFile");
+	stt.testG();
    
 /*
 	

@@ -24,7 +24,7 @@ CPPFLAGS := -ggdb -pthread -O0
 
 CXXFLAGS := _DEBUG 
 
-LIBRARIES := -lstdc++fs -ldl -lpthread -lm -lbase -laudiohelper -lHTMLSocket #link libraries
+LIBRARIES := -lstdc++fs -ldl -lpthread -lm -lbase -laudiohelper -lcurl -lHTMLSocket #link libraries
 LIB_FOLDER_STATIC := ../audio/bin/static
 LIB_INCLUDE := 
 

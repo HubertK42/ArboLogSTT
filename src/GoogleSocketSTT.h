@@ -12,10 +12,12 @@ class GoogleSocketTTS : public HTML::HTMLSocket
 
 	public:
 
-		GoogleSocketTTS(Base::String APIKey);			//constructor
-  		virtual ~GoogleSocketTTS();
+		GoogleSocketTTS(Base::String APIKey);			//!< constructor
+  		virtual ~GoogleSocketTTS();						//!< destructor
 
 	int requestTTSfromfile (const char* file); //!< sends the audio file to google STT and waits for the answer
+
+	int testG() ; // gbt test sample code
 
 	protected:
 
