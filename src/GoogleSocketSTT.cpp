@@ -8,7 +8,6 @@
 #define _METATDATA	"metadata"
 #define _TYPE		"@type"
 #define _API_URL	"https://speech.googleapis.com/v1/speech:recognize"
-#define _API_KEY	"AIzaSyCu0TUWxK8P-qzFDrWciDGnrvesvWGd-aM"
 
 
 //! constructor
@@ -17,7 +16,9 @@ GoogleSocketTTS::GoogleSocketTTS(Base::String APIKey):
 	TInherited("GoogleSocketTTS", Base::eMajor),  
 	 m_ApiKey(APIKey)		
 {
-			
+	if (m_ApiKey.empty())
+		std::cerr << "GoogleSocketTTS()::api-Key is empty!" << std::endl;
+
 }
 
 //! destructor
@@ -47,7 +48,7 @@ int GoogleSocketTTS::requestTTSfromfile (const char* wavfile)
 	Base::String PostData = BRC.toJSON();
 	// create header
  // Set the URL
-        std::string url_with_key = _API_URL + std::string("?key=") + _API_KEY;
+        std::string url_with_key = _API_URL + std::string("?key=") + m_ApiKey.c_str();
       //  curl_easy_setopt(curl, CURLOPT_URL, url_with_key.c_str());
  
         // Set the Recognition Metadata
@@ -90,7 +91,7 @@ int GoogleSocketTTS::testG(const char* file)
     std::string api_url = "https://speech.googleapis.com/v1/speech:recognize";
 
     // API Key or OAuth2 credentials (replace YOUR_API_KEY with your actual API key)
-    std::string api_key = _API_KEY;
+    //std::string api_key = _API_KEY;
 
     // File containing audio data to be transcribed
     std::string audio_file_path = file;
@@ -113,7 +114,7 @@ int GoogleSocketTTS::testG(const char* file)
     CURL* curl = curl_easy_init();
     if (curl) {
         // Set the URL
-        std::string url_with_key = api_url + "?key=" + api_key;
+        std::string url_with_key = api_url + "?key=" + m_ApiKey.c_str();
         curl_easy_setopt(curl, CURLOPT_URL, url_with_key.c_str());
 
         // Set the audio file

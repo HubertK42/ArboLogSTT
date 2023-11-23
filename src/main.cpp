@@ -30,6 +30,13 @@ int main(int argc, char *argv[])
 //---------------------------------------------------------		
 //-------------------- scan start params
 
+	//--- read api key
+	//Base::String key, keyfile = "/home/hubert/.keys/googleApi.txt";
+	Base::String key, keyfile = "~/.keys/googleApi.txt";
+	if (!key.readAscii(keyfile))
+		std::cerr << "GoogleSocketTTS()::Key could not be read, File [" << keyfile << "]" << std::endl;
+
+	key = key.substr(0, key.size()-1);
     audio::ttsrec testA;
     
     char file[50] = "/home/hubert/projects/baum16000.wav";
@@ -39,7 +46,7 @@ int main(int argc, char *argv[])
 
 	//testA.playFromFile(file);
 
-	GoogleSocketTTS stt("MEYAPIKEY");
+	GoogleSocketTTS stt(key);
 
 //	stt.requestTTSfromfile("NoFile");
 	//stt.testG(file);
